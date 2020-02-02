@@ -13,11 +13,17 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModel
 import dagger.android.AndroidInjection
 import android.icu.lang.UCharacter.GraphemeClusterBreak.V
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.icu.lang.UCharacter.GraphemeClusterBreak.V
 
 
 
 
-abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActivity() {
+
+
+abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActivity(), BaseFragment.Callback {
 //    <T : ViewDataBinding, V : BaseViewModel>
     protected lateinit var binding: T
         private set
@@ -37,7 +43,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActiv
      *
      * @return view model instance
      */
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         performDependencyInjection()

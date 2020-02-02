@@ -13,11 +13,21 @@ class MainActivity(
     override val layoutId: Int = R.layout.activity_main
 ) : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
+    override fun onFragmentAttached() {
+
+    }
+
+    override fun onFragmentDetached(tag: String) {
+
+    }
+
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun getViewModel(): MainViewModel {
         return ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
     }
+
+
     
 }
