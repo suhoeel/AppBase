@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.manage.android.di.component.DaggerAppComponent
+import com.manage.android.utils.AppLogger
 import dagger.android.AndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
@@ -30,6 +31,8 @@ class ManageApp : Application(), HasActivityInjector {
         ProcessLifecycleOwner.get()
             .lifecycle
             .addObserver(appLifecycleObserver)
+
+        AppLogger.init()
 
     }
 

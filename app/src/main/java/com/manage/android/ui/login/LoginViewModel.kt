@@ -1,5 +1,7 @@
 package com.manage.android.ui.login
 
-class LoginViewModel {
+import androidx.lifecycle.ViewModel
+
+class LoginViewModel : ViewModel() {
 
 }
