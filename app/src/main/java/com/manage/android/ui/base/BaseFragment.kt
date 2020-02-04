@@ -52,22 +52,6 @@ abstract class BaseFragment<T : ViewDataBinding, V : ViewModel> : Fragment() {
         binding.executePendingBindings()
     }
 
-    fun hideKeyboard() {
-        with(activity) {
-            hideKeyboard()
-        }
-    }
-
-    fun isNetworkConnected(): Boolean = with(activity) {
-        isNetworkConnected()
-    }
-
-    fun openActivityOnTokenExpire() {
-        with(activity) {
-            openActivityOnTokenExpire()
-        }
-    }
-
     private fun performDependencyInjection() {
         AndroidSupportInjection.inject(this)
     }

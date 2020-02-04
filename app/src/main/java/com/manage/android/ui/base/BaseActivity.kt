@@ -41,14 +41,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActiv
         return Build.VERSION.SDK_INT < Build.VERSION_CODES.M || checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
     }
 
-    fun hideKeyboard() {
-        val view = this.currentFocus
-        if (view != null) {
-            val imm: InputMethodManager? = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm?.hideSoftInputFromWindow(view.windowToken, 0)
-        }
-    }
-
     fun openActivityOnTokenExpire() {
         startActivity(com.manage.android.ui.login.newIntent(this))
         finish()
@@ -56,10 +48,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActiv
 
     fun performDependencyInjection() {
         AndroidInjection.inject(this)
-    }
-
-    fun isNetworkConnected(): Boolean {
-        return isInternetAvailable()
     }
 
     @TargetApi(Build.VERSION_CODES.M)

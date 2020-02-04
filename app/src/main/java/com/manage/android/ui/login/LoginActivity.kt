@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.manage.android.ui.base.BaseActivity
 import com.manage.android.ui.main.MainViewModel
+import com.manage.android.utils.reAskToTerminate
 import com.manage.fundamental.BR
 import com.manage.fundamental.R
 import com.manage.fundamental.databinding.ActivityLoginBinding
@@ -18,9 +19,9 @@ fun newIntent(context: Context): Intent = Intent(context, LoginActivity::class.j
 
 class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
-    override val getBindingVariable: Int = BR.viewModel
-
     override val layoutId: Int = R.layout.activity_login
+
+    override val getBindingVariable: Int = BR.viewModel
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -34,6 +35,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
     }
 
-    
-
+    override fun onBackPressed() {
+        reAskToTerminate()
+    }
 }
