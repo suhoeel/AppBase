@@ -3,7 +3,6 @@ package com.manage.android.utils
 import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.manage.fundamental.R
 
 private var doubleBackToExitPressedOnce = false
 
