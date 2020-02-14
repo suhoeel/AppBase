@@ -1,13 +1,14 @@
 package com.manage.android.data.local.db.dao
 
-import androidx.room.*
+import androidx.room.Embedded
+import androidx.room.Relation
 
-@Entity
 data class CategoryWithProduct(
     @Embedded val category: Category,
     @Relation(
         parentColumn = "categoryId",
-        entityColumn = "productId"
+        entityColumn = "productId",
+        entity = Product::class
     )
-    val product: List<Product>
+    val productList: List<Product>
 )

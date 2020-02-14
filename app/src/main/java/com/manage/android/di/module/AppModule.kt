@@ -7,6 +7,7 @@ import androidx.room.RoomDatabase
 import com.manage.android.app.AppLifecycleObserver
 import com.manage.android.data.local.db.AppDatabase
 import com.manage.android.data.local.db.AppDbHelper
+import com.manage.android.data.local.db.DbHelper
 import com.manage.android.di.DatabaseInfo
 import com.manage.android.di.ViewModelBuilder
 import com.manage.android.di.ViewModelFactory
@@ -42,7 +43,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideDbHelper(appDbHelper: AppDbHelper): AppDbHelper {
+    fun provideDbHelper(appDbHelper: AppDbHelper): DbHelper {
         return appDbHelper
     }
 

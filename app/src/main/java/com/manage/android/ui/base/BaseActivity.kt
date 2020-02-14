@@ -22,7 +22,6 @@ abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActiv
 
     private lateinit var viewModel: V
 
-
     abstract val getBindingVariable: Int
 
     @get:LayoutRes
