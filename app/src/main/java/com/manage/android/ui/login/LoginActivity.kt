@@ -35,7 +35,4 @@ class LoginActivity : BaseActivity<ActivityLoginBinding, LoginViewModel>() {
 
     }
 
-    override fun onBackPressed() {
-        reAskToTerminate()
-    }
 }

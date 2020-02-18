@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.manage.android.app.AppLifecycleObserver
 import com.manage.android.data.local.db.AppDatabase
 import com.manage.android.data.local.db.AppDbHelper

@@ -1,5 +1,7 @@
 package com.manage.android.data.local.db
 
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.manage.android.data.local.db.dao.Category
 import com.manage.android.data.local.db.dao.CategoryWithProduct
 import java.lang.Exception

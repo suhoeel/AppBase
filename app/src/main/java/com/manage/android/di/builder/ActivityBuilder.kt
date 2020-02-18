@@ -2,6 +2,7 @@ package com.manage.android.di.builder
 
 import com.manage.android.di.module.LoginModule
 import com.manage.android.di.module.MainModule
+import com.manage.android.ui.main.MainFragmentProvider
 import com.manage.android.ui.login.LoginActivity
 import com.manage.android.ui.main.MainActivity
 import dagger.Module
@@ -11,7 +12,10 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(
-        modules = [MainModule::class]
+        modules = [
+            MainModule::class,
+            MainFragmentProvider::class
+        ]
     )
     abstract fun bindMainActivity(): MainActivity
 

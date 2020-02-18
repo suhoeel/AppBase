@@ -1,7 +1,6 @@
 package com.manage.android.data.local.db.dao
 
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "categories")

@@ -13,13 +13,17 @@ class MainViewModel @Inject constructor(private val repository: TodoRepository) 
 
 //    val categories: LiveData<List<Category>> = mCategories
 
-    private val mCategories = MutableLiveData<List<Category>>()
+    private val _categories = MutableLiveData<List<Category>>()
 
-    val categories: LiveData<List<Category>> = mCategories
+    val categories: LiveData<List<Category>> = _categories
+
+    init {
+        getCategories()
+    }
 
     fun getCategories() {
         viewModelScope.launch {
-            mCategories.value = repository.getAllCategory()
+            _categories.value = repository.getAllCategory()
         }
     }
 
